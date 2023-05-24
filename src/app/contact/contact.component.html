@@ -1,0 +1,56 @@
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <div class="row">
+            <div class="contact-img col-lg-12 col-sm-12 mb-12">
+                <div class="col-lg-4 col-sm-12 mb-4">
+                </div>
+                <div class="form-cls col-lg-6 col-sm-12 mb-6">
+                    <form [formGroup]="contactForm" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <div class="row align-items-stretch mb-5">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <!-- Name input-->
+                                    <input class="form-control" formControlName="name" id="name" type="text"
+                                        placeholder="Your Name *" />
+                                </div>
+                                <div class="form-group">
+                                    <!-- Email address input-->
+                                    <input class="form-control" formControlName="email" id="email" type="email"
+                                        placeholder="Your Email *" />
+                                </div>
+                                <div class="form-group mb-md-0">
+                                    <!-- Phone number input-->
+                                    <input class="form-control" formControlName="contactNo" id="phone" type="tel"
+                                        placeholder="Your Phone *" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-textarea mb-md-0">
+                                    <!-- Message input-->
+                                    <textarea class="form-control" formControlName="message" id="message"
+                                        placeholder="Your Message *">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button-->
+                        <div class="text-center"><button [disabled]="contactForm.invalid"
+                                class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"
+                                (click)="onSubmit()">Send Message</button></div>
+
+                        <div *ngIf="isSubmit" class="alert alert-success">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
